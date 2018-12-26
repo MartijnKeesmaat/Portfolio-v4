@@ -239,4 +239,83 @@ a {
   background: linear-gradient(to right, #2F303A, #1B1C22);
   width: 100%;
   height: 100vh;
-  overflow: hidden; }
+  overflow: hidden;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: justify;
+      justify-content: space-between; }
+  .slider__body {
+    position: relative; }
+    .slider__body svg {
+      height: 430px;
+      width: 590px;
+      display: block;
+      margin: 0 auto; }
+    .slider__body h1 {
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 50px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      top: 50%;
+      transform: translateY(-50%);
+      text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.5);
+      text-align: center;
+      font-size: 5rem;
+      z-index: 1; }
+  .slider footer {
+    padding: 20px 40px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    -ms-flex-align: end;
+        align-items: flex-end; }
+    .slider footer p {
+      color: rgba(255, 255, 255, 0.8);
+      max-width: 200px;
+      font-size: 1.3rem;
+      line-height: 2.3;
+      border-left: 2px #E7CC84 solid;
+      padding-left: 20px;
+      margin: 0px; }
+
+.main-header {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  padding: 20px 40px;
+  -ms-flex-align: center;
+      align-items: center; }
+  .main-header img {
+    height: 60px; }
+  .main-header nav a {
+    color: #E7CC84;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    font-size: 1.3rem; }
+
+.project-nav {
+  position: fixed; }
+
+.btn {
+  border-image: linear-gradient(to right, #B29C60 0%, #E8CD85 100%);
+  border-image-slice: 1;
+  border-width: 1px;
+  background: linear-gradient(to left, rgba(232, 205, 133, 0.03), rgba(232, 205, 133, 0.13), rgba(232, 205, 133, 0.03));
+  color: #F3D992;
+  padding: 1em 2em 0.95em;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.3rem;
+  background-size: 200% auto;
+  transition: .3s all ease;
+  cursor: pointer; }
+  .btn:hover {
+    background-position: right center; }

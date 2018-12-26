@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="590" height="431" viewBox="0 0 590 431">
+  <defs>
+    <path id="project-shape-a" d="M-3.69482223e-13,96.4974747 L49.4974747,47 L383.251875,380.754401 L333.754401,430.251875 L-3.69482223e-13,96.4974747 Z M103,73.4974747 L152.497475,24 L486.251875,357.754401 L436.754401,407.251875 L103,73.4974747 Z M206,49.4974747 L255.497475,6.39488462e-14 L589.251875,333.754401 L539.754401,383.251875 L206,49.4974747 Z"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <use fill="#D8D8D8" xlink:href="#project-shape-a"/>
+  </g>
+</svg>
