@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="page-home">
 
 <head>
   <meta charset="UTF-8">
@@ -39,7 +39,9 @@
     <main class="slider__body">
       <h1>Greenegg</h1>
       <svg style="clip-path: url(#theSVGPath);">
-        <image xlink:href="img/greenegg/header.jpg" x="0" y="0" />
+        <image class="slider__img active" xlink:href="img/greenegg/header.jpg" x="-250" y="-250" />
+        <image class="slider__img" xlink:href="img/codename/header.jpg" x="-250" y="-250" />
+        <image class="slider__img" xlink:href="img/snippets/header.jpg" x="-250" y="-250" />
         <defs>
           <clipPath id="theSVGPath">
             <path d="
@@ -71,7 +73,8 @@
     </footer>
   </section>
 
-  <script src="scripts/dist/main.min.js"></script>
+  <script src="scripts/slider.js"></script>
+  <!-- <script src="scripts/dist/main.min.js"></script> -->
 </body>
 
 </html>

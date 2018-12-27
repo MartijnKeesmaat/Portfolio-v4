@@ -1,0 +1,60 @@
+.black-color
+  background: #000
+  padding: 140px 30px 120px 30px   
+
+  &__inner
+    max-width: 800px
+    margin: 0 auto
+
+  &__heading
+    max-width: 600px
+
+  &__heading__i
+    display: flex
+    align-items: center
+
+    &:nth-child(even)
+      justify-content: flex-end
+
+      h2
+        text-align: right
+
+  h2
+    color: #fff
+    font-size: 3.5rem
+    width: 100%
+    flex: .7
+
+  p
+    color: #fff
+    font-size: 2rem
+    opacity: .8
+    max-width: 500px
+    line-height: 2
+    margin-bottom: 80px
+    margin-top: 20px
+
+  &__heading__stripe
+    height: 2px
+    width: 100%
+    flex: 1
+    background: linear-gradient(to right, #8A43EE, #47D3ED)
+
+  &__collection
+    display: flex
+    align-items: flex-start
+    flex-wrap: wrap
+    justify-content: center
+
+    img
+      width: 50%
+      position: relative
+      z-index: 1
+
+      &:nth-child(2)
+        bottom: -50px
+        left-: -50px
+        z-index: 0
+
+      &:nth-child(3)
+        top: -30px
