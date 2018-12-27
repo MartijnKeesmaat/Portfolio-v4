@@ -320,6 +320,31 @@ a {
 .project-nav {
   position: fixed; }
 
+.slider-detail {
+  background-size: cover;
+  background-position: center; }
+
+.project-detail-header-icon {
+  width: 25px;
+  height: 25px;
+  background: #000;
+  position: absolute;
+  box-shadow: 0 0 60px rgba(231, 204, 132, 0.7);
+  left: 0;
+  right: 0;
+  bottom: -12.5px;
+  margin: 0 auto;
+  transform: rotate(45deg);
+  animation: rotateDiamond 5s qubic infinite forwards; }
+
+@keyframes rotateDiamond {
+  0% {
+    transform: rotate(45deg); }
+  50% {
+    transform: rotate(135deg); }
+  100% {
+    transform: rotate(45deg); } }
+
 .btn {
   border-image: linear-gradient(to right, #B29C60 0%, #E8CD85 100%);
   border-image-slice: 1;
@@ -448,7 +473,7 @@ a {
 
 .process {
   background: linear-gradient(to right, #2F303A, #1B1C22);
-  padding: 120px 30px; }
+  padding: 150px 30px; }
   .process__inner {
     max-width: 1000px;
     margin: 0 auto; }
@@ -506,3 +531,13 @@ a {
         z-index: 2;
         top: -40px;
         box-shadow: 1px 4px 9px rgba(0, 0, 0, 0.09), 0 4px 17px rgba(0, 0, 0, 0.1); }
+
+.pd-slide {
+  background: #E6E6E5;
+  padding: 120px 10vw; }
+  .pd-slide h2 {
+    opacity: .6;
+    max-width: 240px;
+    font-size: 3.5rem;
+    line-height: 1.6;
+    text-transform: capitalize; }

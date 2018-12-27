@@ -76,3 +76,32 @@
 
 .project-nav
   position: fixed
+
+.slider-detail
+  background-size: cover
+  background-position: center
+
+.project-detail-header-icon
+  width: 25px
+  height: 25px
+  background: #000
+  position: absolute
+  box-shadow: 0 0 60px rgba($color-main, .7)
+  left: 0
+  right: 0
+  bottom: -12.5px
+  margin: 0 auto
+  transform: rotate(45deg)
+  animation: rotateDiamond 5s qubic infinite forwards
+
+@keyframes rotateDiamond
+  0%
+    transform: rotate(45deg)
+
+  50%
+    transform: rotate(135deg)
+
+  100%
+    transform: rotate(45deg)
+
+
