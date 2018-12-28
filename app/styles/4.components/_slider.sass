@@ -16,12 +16,23 @@
   &__body
     position: relative
 
+    .slider__img
+      transition: 1.5s all ease
+      opacity: 0
+
+    .slider__title
+      display: none
+
     svg
       height: 430px
       width: 590px
       display: block
       margin: 0 auto
 
+      &:hover
+        .slider__img
+          transform: scale(1.1)
+          
     h1
       color: #fff
       text-transform: uppercase
@@ -36,12 +47,6 @@
       text-align: center
       font-size: 5rem  
       z-index: 1
-
-  &__img
-    display: none
-
-    &.active
-      display: block
 
   footer
     padding: 20px 40px
@@ -103,5 +108,4 @@
 
   100%
     transform: rotate(45deg)
-
 

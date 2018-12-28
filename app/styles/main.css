@@ -261,11 +261,18 @@ a {
       justify-content: space-between; }
   .slider__body {
     position: relative; }
+    .slider__body .slider__img {
+      transition: 1.5s all ease;
+      opacity: 0; }
+    .slider__body .slider__title {
+      display: none; }
     .slider__body svg {
       height: 430px;
       width: 590px;
       display: block;
       margin: 0 auto; }
+      .slider__body svg:hover .slider__img {
+        transform: scale(1.1); }
     .slider__body h1 {
       color: #fff;
       text-transform: uppercase;
@@ -280,10 +287,6 @@ a {
       text-align: center;
       font-size: 5rem;
       z-index: 1; }
-  .slider__img {
-    display: none; }
-    .slider__img.active {
-      display: block; }
   .slider footer {
     padding: 20px 40px;
     display: -ms-flexbox;

@@ -1,3 +1,19 @@
+window.onload = showSlider
+
+function showSlider() {
+  TweenMax.from('.slider__body', 2, {
+    y: '150%',
+    ease: Expo.easeOut
+  })
+
+  TweenMax.staggerFrom('.slider-ui', 1, {
+    opacity: 0,
+    delay: .5,
+    y: 20
+  })
+}
+
+
 function detectMouseWheelDirection(e) {
   var delta = null,
     direction = false;
@@ -16,16 +32,23 @@ function detectMouseWheelDirection(e) {
   return direction;
 }
 
+var scrollCounter = 0
+
 function handleMouseWheelDirection(direction) {
-  console.log(direction); // see the direction in the console
-  if (direction == 'down') {
-    nextSlide()
-  } else if (direction == 'up') {
-    prevSlide();
-  } else {
-    // this means the direction of the mouse wheel could not be determined
+
+  if (scrollCounter % 50 == 0) {
+    if (direction == 'down') {
+      showNextSlide()
+    } else if (direction == 'up') {
+      showPrevSlide()
+    } else {
+      // this means the direction of the mouse wheel could not be determined
+    }
   }
+
+  scrollCounter++
 }
+
 document.onmousewheel = function (e) {
   handleMouseWheelDirection(detectMouseWheelDirection(e));
 };
@@ -35,24 +58,45 @@ if (window.addEventListener) {
   });
 }
 
-function nextSlide() {
-  let activeSlide = 0;
+let activeSlideCount = 0;
+let nextSlide = activeSlideCount + 1;
+const SLIDER_IMAGES = document.querySelectorAll('.slider__img');
+const SLIDER_TITLES = document.querySelectorAll('.slider__title');
+let SLIDER_TITLE = document.querySelector('.slider-display-title');
+let activeSlide = SLIDER_IMAGES[activeSlideCount];
 
-  const SLIDER_IMAGES = document.querySelectorAll('.slider__img');
-  SLIDER_IMAGES[activeSlide].classList.remove('active');
-  SLIDER_IMAGES[activeSlide + 1].classList.add('active');
-
-  activeSlide++
-  console.log(activeSlide);
-
-  // if (activeSlide >= SLIDER_IMAGES.length) activeSlide = 0;
-
+const hideImages = () => SLIDER_IMAGES.forEach(i => i.style.opacity = 0);
+const showCurrentImage = () => SLIDER_IMAGES[activeSlideCount].style.opacity = 1;
+const checkIfSlidesEnded = () => {
+  if (SLIDER_IMAGES.length == activeSlideCount) activeSlideCount = 0
+}
+const checkIfSlidesPreceeded = () => {
+  if (activeSlideCount === -1) activeSlideCount = SLIDER_IMAGES.length - 1
 }
 
-function prevSlide() {
-
-  // const SLIDER_IMAGES = document.querySelectorAll('.slider__img');
-  // SLIDER_IMAGES[1].classList.remove('active');
-  // SLIDER_IMAGES[0].classList.add('active');
-
+const showCurrentText = () => {
+  SLIDER_TITLE.innerText = SLIDER_TITLES[activeSlideCount].innerText
 }
+
+hideImages();
+showCurrentImage();
+
+function showNextSlide() {
+  activeSlideCount++
+  checkIfSlidesEnded();
+
+  hideImages();
+  showCurrentImage();
+
+  showCurrentText();
+}
+
+function showPrevSlide() {
+  activeSlideCount--
+  checkIfSlidesPreceeded();
+  hideImages();
+  showCurrentImage();
+  showCurrentText();
+}
+
+setInterval(showNextSlide, 7000);

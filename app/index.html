@@ -33,14 +33,17 @@
 
   <section class="slider">
     <header class="slider__header main-header">
-      <img src="img/logo.svg" alt="">
-      <nav><a href="#">Profile</a></nav>
+      <img class="slider-ui" src="img/logo.svg" alt="">
+      <nav class="slider-ui"><a class="slider-ui" href="#">Profile</a></nav>
     </header>
     <main class="slider__body">
-      <h1>Greenegg</h1>
+      <h1 class="slider-display-title">Greenegg</h1>
+      <p class="slider__title">GreenEgg</p>
+      <p class="slider__title">Codename</p>
+      <p class="slider__title">Snippets</p>
       <svg style="clip-path: url(#theSVGPath);">
-        <image class="slider__img active" xlink:href="img/greenegg/header.jpg" x="-250" y="-250" />
-        <image class="slider__img" xlink:href="img/codename/header.jpg" x="-250" y="-250" />
+        <image class="slider__img" xlink:href="img/greenegg/header.jpg" x="-250" y="-250" />
+        <image class="slider__img" xlink:href="img/codename/header.jpg" x="-400" y="-250" />
         <image class="slider__img" xlink:href="img/snippets/header.jpg" x="-250" y="-250" />
         <defs>
           <clipPath id="theSVGPath">
@@ -68,11 +71,12 @@
     </main>
     <aside class="project-nav"></aside>
     <footer>
-      <p>Greeneggtotaal voert het totale assortiment van de Big Green Egg barbecues. </p>
-      <button class="btn">See casestudy</button>
+      <p class="slider-ui">Greeneggtotaal voert het totale assortiment van de Big Green Egg barbecues. </p>
+      <button class="btn slider-ui">See casestudy</button>
     </footer>
   </section>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
   <script src="scripts/slider.js"></script>
   <!-- <script src="scripts/dist/main.min.js"></script> -->
 </body>
