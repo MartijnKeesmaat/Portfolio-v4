@@ -93,7 +93,7 @@ const hideImages = () => SLIDER_DOM.images.forEach(i => {
 });
 
 function showCurrentImage() {
-  TweenMax.to(SLIDER_DOM.images[activeSlideCount], .6, {
+  TweenMax.to(SLIDER_DOM.images[activeSlideCount], .5, {
     y: 30,
     opacity: 1,
     rotationX: 100,
@@ -103,17 +103,17 @@ function showCurrentImage() {
 }
 
 function showCurrentDesc() {
-  TweenMax.to(SLIDER_DOM.desc[activeSlideCount], 1.2, {
+  TweenMax.to(SLIDER_DOM.desc[activeSlideCount], 1, {
     x: 0,
     opacity: 1,
     rotationY: 0,
-    delay: .6
+    delay: .5
   })
 }
 
 const hideCurrentDesc = () => SLIDER_DOM.desc.forEach(i => {
   (
-    TweenMax.to(i, .6, {
+    TweenMax.to(i, .5, {
       x: -100,
       opacity: 0,
     })
@@ -148,7 +148,7 @@ function showCurrentTitle() {
   setTimeout(function () {
     clearInterval(genText)
     currentTitle.innerText = nextTitle
-  }, 1200)
+  }, 1000)
 }
 
 const getRandString = str => {
