@@ -1,20 +1,166 @@
-// Animate in
-window.onload = showSlider;
+// Follow cursor
+{
+  let mouse = {
+    x: 0,
+    y: 0
+  }; //Cursor position
+  let pos = {
+    x: 0,
+    y: 0
+  }; //Cursor position
+  let ratio = .05; //delay follow cursor
+  let active = false;
+  let ball = document.getElementById("ball");
 
-function showSlider() {
-  TweenMax.from('.slider__body', 2, {
+  TweenLite.set(ball, {
+    xPercent: -50,
+    yPercent: -50
+  }); //scale from middle ball
+
+  document.addEventListener("mousemove", mouseMove);
+
+  function mouseMove(e) {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+  }
+
+  TweenLite.ticker.addEventListener("tick", updatePosition);
+
+  function updatePosition() {
+    if (!active) {
+      pos.x += (mouse.x - pos.x) * ratio;
+      pos.y += (mouse.y - pos.y) * ratio;
+
+      TweenLite.set(ball, {
+        x: pos.x,
+        y: pos.y
+      });
+    }
+  }
+}
+
+const CURSOR = document.querySelector('#ball');
+const BODY = document.querySelector('body');
+
+// Cursor growth over links
+let noCursorList = [];
+let LINKS = document.querySelectorAll('a');
+
+LINKS.forEach(function (elem) {
+  elem.addEventListener('mouseenter', cursorOverLink, false);
+  elem.addEventListener('mouseleave', cursorAwayLink, false);
+});
+
+function cursorOverLink() {
+  CURSOR.classList.add('cursor--link-hover')
+}
+
+function cursorAwayLink() {
+  CURSOR.classList.remove('cursor--link-hover')
+}
+
+
+// Click feedback
+BODY.addEventListener('click', cursorClick, false);
+
+function cursorClick() {
+  CURSOR.classList.remove("cursor--click");
+  void CURSOR.offsetWidth;
+  CURSOR.classList.add("cursor--click");
+}
+
+
+// Remove if cursor is out window
+document.addEventListener('mouseenter', cursorInWindow, false);
+document.addEventListener('mouseleave', cursorOutWindow, false);
+
+function cursorOutWindow() {
+  CURSOR.classList.add('cursor--out-window')
+}
+
+function cursorInWindow() {
+  CURSOR.classList.remove('cursor--out-window')
+}
+// Set DOM
+const SLIDER_DOM = {
+  images: document.querySelectorAll('.slider__img'),
+  titles: document.querySelectorAll('.slider__title'),
+  displayTitle: document.querySelector('.slider-display-title'),
+  desc: document.querySelectorAll('.slider__desc'),
+  links: document.querySelectorAll('.slider__link'),
+  navs: document.querySelectorAll('.project-nav__item'),
+  introLink: document.querySelector('.intro__link'),
+  slider: document.querySelector('.slider'),
+  intro: document.querySelector('.intro')
+};
+
+
+// Animate in
+var sliderActive = false
+SLIDER_DOM.introLink.addEventListener('click', function () {
+
+  showSlider();
+  console.log('a');
+
+}, false)
+
+
+// TweenMax.set('.slider__body, .slider-ui', {
+//   opacity: 1
+// })
+
+function hideSlider() {
+  TweenMax.set('.slider__body', {
     y: '150%',
     rotationX: 100,
     scaleX: 1.3,
-    ease: Expo.easeOut
+    opacity: 0
   });
 
-  TweenMax.staggerFrom('.slider-ui', 0.8, {
+  TweenMax.set('.slider-ui', {
     opacity: 0,
     delay: 0.6,
     rotationX: 30,
     y: 20
   });
+
+  SLIDER_DOM.slider.style.display = 'none'
+}
+
+hideSlider();
+
+function showSlider() {
+  TweenMax.to('#fade', 2.5, {
+    y: '-200%'
+  })
+
+  setTimeout(function () {
+    SLIDER_DOM.slider.style.display = 'flex'
+
+    TweenMax.to(SLIDER_DOM.intro, 3, {
+      y: '150%',
+      rotationX: 100,
+      scaleX: 1.3,
+      opacity: 0
+    });
+
+
+    TweenMax.to('.slider__body', 2, {
+      y: '0%',
+      rotationX: 0,
+      scaleX: 1,
+      ease: Expo.easeOut,
+      opacity: 1
+    });
+
+    TweenMax.staggerTo('.slider-ui', 0.8, {
+      opacity: 1,
+      delay: 0.6,
+      rotationX: 0,
+      y: 0
+    });
+  }, 500)
+
 }
 
 // Detect scroll direction
@@ -63,16 +209,6 @@ if (window.addEventListener) {
     handleMouseWheelDirection(detectMouseWheelDirection(e));
   });
 }
-
-// Set DOM
-const SLIDER_DOM = {
-  images: document.querySelectorAll('.slider__img'),
-  titles: document.querySelectorAll('.slider__title'),
-  displayTitle: document.querySelector('.slider-display-title'),
-  desc: document.querySelectorAll('.slider__desc'),
-  links: document.querySelectorAll('.slider__link'),
-  navs: document.querySelectorAll('.project-nav__item')
-};
 
 // Set vars
 let activeSlideCount = 0;
@@ -207,3 +343,47 @@ SLIDER_DOM.navs.forEach(i => i.addEventListener('click', chooseSlide))
 
 // Autoplay
 let slideTimer = setInterval(showNextSlide, 7000);
+
+
+window.addEventListener('keydown', checkKey, false);
+
+function checkKey(e) {
+  if (e.keyCode === 38) showPrevSlide();
+  if (e.keyCode === 40) showNextSlide();
+}
+
+
+
+// Intro
+TweenMax.staggerFrom('.intro__text', 2, {
+  opacity: 0,
+  delay: .5,
+  blur: 10
+})
+
+TweenMax.from('.intro__ghost-face', 2, {
+  opacity: 0,
+  delay: 1,
+  blur: 10
+})
+
+TweenMax.from('.intro__body p', 1, {
+  opacity: 0,
+  blur: 10,
+  delay: 2,
+  y: 30
+})
+
+TweenMax.from('.intro__logo', 1, {
+  opacity: 0,
+  blur: 10,
+  delay: 2.5,
+  y: 30,
+})
+
+TweenMax.from('.intro__link', 1, {
+  opacity: 0,
+  blur: 10,
+  delay: 3,
+  y: 30,
+})

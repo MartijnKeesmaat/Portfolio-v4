@@ -1,0 +1,49 @@
+// Real stuff happens here  
+$cursor-color: #44E3F5
+$cursor-size: 12px
+$cursor-size--expanded: 24px
+
+*
+  -webkit-user-select: none
+  -moz-user-select: none
+  -khtml-user-select: none
+  -ms-user-select: none
+
+#ball
+  position: fixed
+  display: block
+  left: 0
+  top: 0
+  transform: translate(-50%, -50%)
+  width: 25px
+  height: 25px
+  background: rgba($color-main, .3)
+  border-radius: 50%
+  pointer-events: none
+  width: 14px
+  height: 14px
+  border-radius: 50%
+  margin-right: 14px
+  transition: .3s all ease
+
+#ball.cursor
+  
+  &--link-hover
+    width: $cursor-size--expanded
+    height: $cursor-size--expanded
+    border: 1px solid $color-main
+    background: none
+    
+  &--out-window
+    display: none
+    
+  &--click
+    animation: pulse .5s ease
+
+@keyframes pulse 
+  0% 
+    box-shadow: 0 0 0 0 rgba($color-main, 0.4)
+  70% 
+    box-shadow: 0 0 0 40px rgba($color-main, 0)
+  100% 
+    box-shadow: 0 0 0 0 rgba($color-main, 0)

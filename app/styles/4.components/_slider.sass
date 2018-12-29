@@ -4,6 +4,16 @@
   body
     -webkit-overflow-scrolling: touch
 
+#fade
+  position: fixed
+  width: 300vw
+  height: 300vh
+  background: $bg-dark
+  z-index: 9
+  left: -50%
+  right: 0
+  transform: translateY(100%) rotate(-10deg)
+
 .slider
   background: $bg-dark
   width: 100%
@@ -12,6 +22,9 @@
   display: flex
   flex-direction: column
   justify-content: space-between
+  position: fixed
+  top: 0
+  display: none
 
   &__body
     position: relative
@@ -112,6 +125,20 @@
       outline: 0
 
     &--active,
+      width: 35px
+      position: relative
+      
+      &:after
+        content: ''
+        position: absolute
+        width: 0%
+        height: 100%
+        background: $color-main
+        left: 0
+        top: 0
+        display: block
+        animation: active-project 7s linear forwards
+
     &:hover
       background: $color-main
       width: 35px
@@ -143,6 +170,13 @@
   100%
     transform: rotate(45deg)
 
+
+@keyframes active-project
+  from
+    width: 0
+
+  to
+    width: 100%
 
 
 

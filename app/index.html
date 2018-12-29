@@ -13,6 +13,10 @@
 </head>
 
 <body>
+  <div id="magic-cursor"></div>
+  <div id="ball"></div>
+
+  <div id="fade"></div>
 
   <section class="intro">
     <img class="intro__clouds"></img>
@@ -27,13 +31,13 @@
     <img class="intro__ghost-face" src="img/ghost-face.png" alt="">
     <div class="intro__gradient"></div>
     <footer class="intro__link">
-      <button>See <br> projects</button>
+      <button> <span>See <br> projects</span> </button>
     </footer>
   </section>
 
   <section class="slider">
     <header class="slider__header main-header">
-      <img class="slider-ui" src="img/logo.svg" alt="">
+      <a href="index.html"> <img class="slider-ui" src="img/logo.svg" alt=""> </a>
       <nav class="slider-ui"><a class="slider-ui" href="#">Profile</a></nav>
     </header>
     <main class="slider__body">
@@ -69,7 +73,7 @@
         </defs>
       </svg>
     </main>
-    <aside class="project-nav">
+    <aside class="project-nav slider-ui">
       <button data-index="0" class="project-nav__item project-nav__item--active"></button>
       <button data-index="1" class="project-nav__item"></button>
       <button data-index="2" class="project-nav__item"></button>
@@ -90,6 +94,7 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
   <script src="scripts/slider.js"></script>
+  <!-- <script src="scripts/buddy.js"></script> -->
   <!-- <script src="scripts/dist/main.min.js"></script> -->
 </body>
 
