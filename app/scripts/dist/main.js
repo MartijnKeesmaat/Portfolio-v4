@@ -69,7 +69,9 @@ const SLIDER_DOM = {
   images: document.querySelectorAll('.slider__img'),
   titles: document.querySelectorAll('.slider__title'),
   displayTitle: document.querySelector('.slider-display-title'),
-  desc: document.querySelectorAll('.slider__desc')
+  desc: document.querySelectorAll('.slider__desc'),
+  links: document.querySelectorAll('.slider__link'),
+  navs: document.querySelectorAll('.project-nav__item')
 };
 
 // Set vars
@@ -91,30 +93,42 @@ const hideImages = () => SLIDER_DOM.images.forEach(i => {
 });
 
 function showCurrentImage() {
-  TweenMax.to(SLIDER_DOM.images[activeSlideCount], .2, {
+  TweenMax.to(SLIDER_DOM.images[activeSlideCount], .6, {
     y: 30,
     opacity: 1,
     rotationX: 100,
-    scale: 1.1
+    scale: 1.1,
+    ease: Expo.easeIn
   })
 }
 
 function showCurrentDesc() {
-  TweenMax.to(SLIDER_DOM.desc[activeSlideCount], .6, {
+  TweenMax.to(SLIDER_DOM.desc[activeSlideCount], 1.2, {
     x: 0,
     opacity: 1,
-    rotationY: 0
+    rotationY: 0,
+    delay: .6
   })
 }
 
 const hideCurrentDesc = () => SLIDER_DOM.desc.forEach(i => {
   (
-    TweenMax.to(i, 0, {
+    TweenMax.to(i, .6, {
       x: -100,
       opacity: 0,
     })
   )
 });
+
+const changeUrl = () => {
+  SLIDER_DOM.links.forEach(i => i.style.display = 'none');
+  SLIDER_DOM.links[activeSlideCount].style.display = 'block';
+}
+
+function showActiveNav() {
+  SLIDER_DOM.navs.forEach(i => i.classList.remove('project-nav__item--active'));
+  SLIDER_DOM.navs[activeSlideCount].classList.add('project-nav__item--active');
+}
 
 function checkIfSlidesEnded() {
   if (SLIDER_DOM.images.length == activeSlideCount) activeSlideCount = 0;
@@ -134,22 +148,25 @@ function showCurrentTitle() {
 }
 
 // Init
-hideImages();
-showCurrentImage();
-showCurrentDesc();
-hideCurrentDesc();
+function init() {
+  hideImages();
+  showCurrentImage();
+  showCurrentDesc();
+  hideCurrentDesc();
+  showCurrentTitle();
+  changeUrl();
+  showActiveNav();
+  changeUrl();
+}
+
+init();
 
 // Control slides
 function showNextSlide() {
   activeSlideCount++;
   checkIfSlidesEnded();
-
-  hideImages();
-  showCurrentImage();
-  showCurrentDesc()
-  showCurrentTitle();
-  hideCurrentDesc();
-
+  init();
+  // Reset slide timer
   clearInterval(slideTimer);
   slideTimer = setInterval(showNextSlide, 7000);
 }
@@ -157,12 +174,22 @@ function showNextSlide() {
 function showPrevSlide() {
   activeSlideCount--;
   checkIfSlidesPreceeded();
-  hideImages();
-  showCurrentDesc();
-  showCurrentImage();
-  showCurrentTitle();
-  hideCurrentDesc();
+  init();
+  // Reset slide timer
+  clearInterval(slideTimer);
+  slideTimer = setInterval(showNextSlide, 7000);
 }
+
+// Control slides
+function chooseSlide(e) {
+  activeSlideCount = e.target.dataset.index
+  init();
+  // Reset slide timer
+  clearInterval(slideTimer);
+  slideTimer = setInterval(showNextSlide, 7000);
+}
+
+SLIDER_DOM.navs.forEach(i => i.addEventListener('click', chooseSlide))
 
 // Autoplay
 let slideTimer = setInterval(showNextSlide, 7000);
