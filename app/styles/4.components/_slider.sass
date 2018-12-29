@@ -2,7 +2,7 @@
   overflow: hidden
 
   body
-    -webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch
 
 .slider
   background: $bg-dark
@@ -18,7 +18,7 @@
 
     .slider__img
       transition: 1.5s all ease
-      opacity: 0
+      // opacity: 0
 
     .slider__title
       display: none
@@ -53,15 +53,23 @@
     display: flex
     justify-content: space-between
     align-items: flex-end
+    
+    .slider__desc
+      opacity: 0
+      position: absolute
 
-    p
+    .slider__desc__container
       color: rgba(#fff, .8)
-      max-width: 200px
+      max-width: 230px
       font-size: 1.3rem
       line-height: 2.3
       border-left: 2px $color-main solid
       padding-left: 20px
       margin: 0px
+      position: relative
+      height: 92px
+      width: 100%
+      overflow: hidden
 
 .main-header
   display: flex
@@ -108,4 +116,6 @@
 
   100%
     transform: rotate(45deg)
+
+
 
