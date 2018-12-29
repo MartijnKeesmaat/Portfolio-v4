@@ -142,9 +142,23 @@ function showCurrentTitle() {
   var currentTitle = SLIDER_DOM.displayTitle;
   var nextTitle = SLIDER_DOM.titles[activeSlideCount].innerText;
 
-  // var r = Math.floor(Math.random() * CHARACTERS.length);
-  // var randomChar = CHARACTERS[r];
-  currentTitle.innerText = nextTitle;
+
+  const gen = () => currentTitle.innerText = getRandString(nextTitle);
+  var genText = setInterval(gen, 100);
+  setTimeout(function () {
+    clearInterval(genText)
+    currentTitle.innerText = nextTitle
+  }, 1200)
+}
+
+const getRandString = str => {
+  let temp = [];
+  for (let i = 0; i < str.length; i++) {
+    var r = Math.floor(Math.random() * CHARACTERS.length);
+    var randomChar = CHARACTERS[r];
+    temp.push(randomChar)
+  }
+  return temp.join('');
 }
 
 // Init
