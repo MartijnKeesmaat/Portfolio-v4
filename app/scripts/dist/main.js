@@ -105,10 +105,6 @@ SLIDER_DOM.introLink.addEventListener('click', function () {
 }, false)
 
 
-// TweenMax.set('.slider__body, .slider-ui', {
-//   opacity: 1
-// })
-
 function hideSlider() {
   TweenMax.set('.slider__body', {
     y: '150%',
@@ -190,6 +186,7 @@ var scrollCounter = 0;
 function handleMouseWheelDirection(direction) {
   if (scrollCounter % 50 == 0) {
     if (direction == 'down') {
+      showSlider();
       showNextSlide();
     } else if (direction == 'up') {
       showPrevSlide();

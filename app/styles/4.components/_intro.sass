@@ -57,11 +57,13 @@
     transform: translateX(0%)
     background: url(../img/clouds.png)
     display: block
-    width: 3000px
-    height: 800px
+    width: 200%
+    height: 100%
     top: 0
-    animation: moveClouds 20s forwards
+    animation: moveClouds 60s forwards infinite
     z-index: 0
+    left: 0
+    opacity: 0.8
 
   &__link
     position: absolute
@@ -160,9 +162,12 @@
 @keyframes moveClouds
   0% 
     transform: translateX(0) scaleX(200%)
+    left: 0
 
-  50% 
-    transform: translateX(-50%) scaleX(200%)
+  50%
+    transform: translateX(-100%) scaleX(200%)
+    left: -100%
 
   100% 
-    transform: translateX(0%) scaleX(200%)
+    transform: translateX(-100%) scaleX(200%)
+    left: 0
