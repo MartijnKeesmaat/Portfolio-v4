@@ -493,7 +493,7 @@ a {
 
 .black-color {
   background: #000;
-  padding: 140px 30px 120px 30px; }
+  padding: 220px 30px 200px; }
   .black-color__inner {
     max-width: 800px;
     margin: 0 auto; }
@@ -553,12 +553,12 @@ a {
   height: 90vh;
   object-fit: cover;
   width: 100%;
-  background-image: url(../img/codename/break.gif);
+  background-image: url(../img/codename/break.jpg);
   background-size: cover; }
 
 .process {
   background: linear-gradient(to right, #2F303A, #1B1C22);
-  padding: 150px 30px; }
+  padding: 200px 30px; }
   .process__inner {
     max-width: 1000px;
     margin: 0 auto; }
@@ -619,7 +619,7 @@ a {
 
 .pd-slide-section {
   background: #E6E6E5;
-  padding: 120px 10vw;
+  padding: 200px 10vw 120px 10vw;
   padding-right: 0; }
   .pd-slide-section h2 {
     opacity: .6;
