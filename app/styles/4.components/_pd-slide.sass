@@ -1,6 +1,7 @@
-.pd-slide
+.pd-slide-section
   background: #E6E6E5
   padding: 120px 10vw
+  padding-right: 0
 
   &__inner
     
@@ -11,3 +12,79 @@
     font-size: 3.5rem
     line-height: 1.6
     text-transform: capitalize
+
+.pd-slider
+  margin-top: 60px
+  white-space: nowrap
+  overflow: hidden
+  padding-bottom: 20px
+ 
+  &__inner
+    animation: animate-slider 30s infinite linear forwards
+
+    &:hover
+      -webkit-animation-play-state: paused;
+      -moz-animation-play-state: paused;
+      -o-animation-play-state: paused;
+      animation-play-state: paused;
+
+
+.pd-slide
+  width: 600px
+  display: inline-block
+  transition: .6s all cubic-bezier(0.65, 0.05, 0.36, 1)
+  position: relative
+  margin-right: 50px
+
+  &--active
+    h2
+      opacity: 1
+      transform: translateY(0)
+  
+
+  img
+
+  &__text
+    position: relative
+    margin-top: 40px
+    display: flex
+    align-items: flex-start
+
+  &__title
+    font-size: 2rem
+    max-width: 100px
+    white-space: initial
+    text-align: center
+    text-transform: capitalize
+    margin-right: 20px
+    white-space: pre-wrap
+  
+  &__desc
+    font-family: $oswald
+    text-transform: uppercase
+    letter-spacing: 5px
+    font-size: 1.3rem
+    white-space: pre-wrap
+    max-width: 380px
+    line-height: 2
+
+  &__numb
+    opacity: .03
+    position: absolute
+    font-size: 19rem
+    font-family: $playfair
+    top: -91px
+    left: -10px
+    letter-spacing: 3px
+    line-height: 1
+    font-size: 18rem
+
+@keyframes animate-slider
+  0%
+    transform: translateX(0)
+
+  50% 
+    transform: translateX(-158%)
+  
+  100% 
+    transform: translateX(0)
