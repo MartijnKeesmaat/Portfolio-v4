@@ -185,6 +185,16 @@
   align-items: center
   justify-content: center
 
+  a:hover
+    .slider__img
+      transform: scale(1.1)
+
+    h3
+      letter-spacing: 7px
+
+    h2
+      letter-spacing: 20px
+
   &__heading
     color: #fff
     text-transform: uppercase
@@ -207,9 +217,11 @@
   h2
     font-size: 4rem
     letter-spacing: 16px
+    transition: .6s all ease
 
   h3
     font-family: $oswald
     font-size: 1.9rem
     letter-spacing: 9px
     margin-bottom: 1em
+    transition: .6s all ease
