@@ -12,7 +12,10 @@
   <link rel="stylesheet" href="styles/main.min.css">
 </head>
 
+
+
 <body>
+
 
   <section class="slider slider-detail" style="background-image: url(../../img/codename/header-detail.jpg)">
     <header class="slider__header main-header">
@@ -47,6 +50,12 @@
         </defs>
       </svg>
     </main>
+    <div class="slide-wrapper">
+      <div class="slide-item">
+        <img src="img/codename/header-detail.jpg" class="slide-item__image" />
+        <div class="spotlight"></div>
+      </div>
+    </div>
     <aside class="project-nav"></aside>
     <footer>
       <div class="project-detail-header-icon"></div>
@@ -227,6 +236,31 @@
   </footer>
 
   <!-- <script src="scripts/dist/main.min.js"></script> -->
+  <script src="scripts/pixi.min.js"></script>
+  <script src="scripts/TweenMax.min.js"></script>
+  <script src="scripts/displacement.js"></script>
+  <script src="scripts/imagesloaded.pkgd.min.js"></script>
+  <script>
+    imagesLoaded(document.body, () =>
+      document.body.classList.remove('loading')
+    );
+
+    var spriteImages = document.querySelectorAll('.slide-item__image');
+    var spriteImagesSrc = [];
+
+    for (var i = 0; i < spriteImages.length; i++) {
+      var img = spriteImages[i];
+      spriteImagesSrc.push(img.getAttribute('src'));
+    }
+
+    var initCanvasSlideshow = new CanvasSlideshow({
+      sprites: spriteImagesSrc,
+      displacementImage: 'img/displacements/ripple.jpg',
+      autoPlay: true,
+      autoPlaySpeed: [10, 3],
+      displaceScale: [200, 70]
+    });
+  </script>
 </body>
 
 </html>

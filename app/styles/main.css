@@ -730,3 +730,17 @@ a {
     transform: translateX(-158%); }
   100% {
     transform: translateX(0); } }
+
+.slider-detail {
+  position: relative;
+  width: 100%; }
+  .slider-detail canvas {
+    position: absolute;
+    top: 0;
+    z-index: 0; }
+  .slider-detail .slide-wrapper img {
+    display: none; }
+  .slider-detail .slider__body {
+    z-index: 1; }
+  .slider-detail .main-header {
+    z-index: 1; }
