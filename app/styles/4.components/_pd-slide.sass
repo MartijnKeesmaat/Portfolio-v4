@@ -1,6 +1,6 @@
 .pd-slide-section
   background: #E6E6E5
-  padding: 200px 10vw 120px 10vw
+  padding: 120px 10vw 100px
   padding-right: 0
 
   &__inner
@@ -17,7 +17,7 @@
   margin-top: 60px
   white-space: nowrap
   overflow: hidden
-  padding-bottom: 20px
+  padding-bottom: 70px
  
   &__inner
     animation: animate-slider 30s infinite linear forwards
@@ -30,11 +30,15 @@
 
 
 .pd-slide
-  width: 600px
+  height: 400px
   display: inline-block
   transition: .6s all cubic-bezier(0.65, 0.05, 0.36, 1)
   position: relative
   margin-right: 50px
+
+  img
+    width: auto
+    height: 100%
 
   &--active
     h2

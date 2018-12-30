@@ -1,0 +1,77 @@
+.dual-content
+  padding: 200px 30px
+  display: flex
+  justify-content: center
+  align-items: center
+
+  &__inner
+    display: flex
+    align-items: center
+    max-width: 1400px
+    margin: 0 auto
+
+  &__img-container
+    height: 350px
+    width: 637px
+    overflow: hidden
+
+    img
+      animation: scrollProject 30s linear infinite forwards
+      max-width: 100%
+
+      &:hover
+        -webkit-animation-play-state: paused
+        -moz-animation-play-state: paused
+        -o-animation-play-state: paused
+        animation-play-state: paused
+
+  &__text
+    max-width: 400px
+    margin-left: 50px
+
+    h2
+      text-transform: capitalize
+      line-height: 2
+      color: #fff
+      font-size: 3rem
+      max-width: 260px
+      margin-bottom: 0.2em
+      margin-top: 0
+
+    p
+      line-height: 2.5
+      font-size: 1.5rem
+      opacity: .8
+      max-width: 350px
+      color: #fff
+      opacity: 0.6
+
+    img
+      height: 30px
+
+
+@keyframes scrollProject
+  0%
+    transform: translateY(0%)
+
+  50%
+    transform: translateY(calc(-100% + 350px))
+
+  100%
+    transform: translateY(0%)
+
+
+.section-responsive
+
+  .dual-content__text img
+    height: 25px
+
+  .dual-content__inner
+    margin: 0
+    margin-right: 80px
+
+  &__phones 
+
+    img 
+      margin-right: 42px
+      width: 200px
