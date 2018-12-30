@@ -98,8 +98,9 @@ const SLIDER_DOM = {
 var sliderActive = false;
 SLIDER_DOM.introLink.addEventListener(
   'click',
-  function() {
+  function () {
     showSlider();
+    init();
   },
   false
 );
@@ -129,7 +130,7 @@ function showSlider() {
     y: '-200%'
   });
 
-  setTimeout(function() {
+  setTimeout(function () {
     SLIDER_DOM.slider.style.display = 'flex';
 
     TweenMax.to(SLIDER_DOM.intro, 3, {
@@ -195,11 +196,11 @@ function handleMouseWheelDirection(direction) {
   scrollCounter++;
 }
 
-document.onmousewheel = function(e) {
+document.onmousewheel = function (e) {
   handleMouseWheelDirection(detectMouseWheelDirection(e));
 };
 if (window.addEventListener) {
-  document.addEventListener('DOMMouseScroll', function(e) {
+  document.addEventListener('DOMMouseScroll', function (e) {
     handleMouseWheelDirection(detectMouseWheelDirection(e));
   });
 }
@@ -272,7 +273,7 @@ function showCurrentTitle() {
 
   const gen = () => (currentTitle.innerText = getRandString(nextTitle));
   var genText = setInterval(gen, 100);
-  setTimeout(function() {
+  setTimeout(function () {
     clearInterval(genText);
     currentTitle.innerText = nextTitle;
   }, 1000);
@@ -299,8 +300,6 @@ function init() {
   showActiveNav();
   changeUrl();
 }
-
-init();
 
 // Control slides
 function showNextSlide() {
