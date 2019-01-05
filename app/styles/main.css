@@ -116,16 +116,23 @@ a {
   -ms-flex-align: center;
       align-items: center;
   background: linear-gradient(to right, #2F303A, #1B1C22); }
+  .intro__header {
+    position: fixed;
+    top: 15px;
+    width: 100%;
+    opacity: 0; }
   .intro__logo {
     position: relative;
-    z-index: 2; }
+    z-index: 2;
+    opacity: 0; }
   .intro__ghost-face {
     position: absolute;
     width: 650px;
     bottom: 0;
     left: 0;
     right: 0;
-    margin: 0 auto; }
+    margin: 0 auto;
+    opacity: 0; }
   .intro__body {
     position: relative;
     display: -ms-flexbox;
@@ -142,7 +149,8 @@ a {
       line-height: 3.5;
       font-size: 1.4rem;
       text-align: center;
-      width: 500px; }
+      width: 500px;
+      opacity: 0; }
   .intro__logo {
     position: absolute;
     bottom: 0;
@@ -167,14 +175,16 @@ a {
     top: 0;
     animation: moveClouds 40s forwards infinite;
     z-index: 0;
-    left: 0; }
+    left: 0;
+    opacity: 0; }
   .intro__link {
     position: absolute;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: center;
         justify-content: center;
-    bottom: 30px; }
+    bottom: 30px;
+    opacity: 0; }
     .intro__link button {
       background: none;
       border: none;
@@ -261,6 +271,14 @@ a {
     transform: translateX(-100%) scaleX(200%);
     left: 0; } }
 
+.intro__header {
+  z-index: 10; }
+
+.intro .intro__body p,
+.intro .intro__link,
+.intro .intro__logo {
+  transform: translateY(30px); }
+
 .page-home {
   overflow: hidden; }
   .page-home body {
@@ -293,7 +311,8 @@ a {
       justify-content: space-between;
   top: 0; }
   .slider__body {
-    position: relative; }
+    position: relative;
+    max-width: 100vw; }
     .slider__body .slider__img {
       transition: 1.5s all ease; }
     .slider__body .slider__title {
@@ -326,7 +345,8 @@ a {
     -ms-flex-pack: justify;
         justify-content: space-between;
     -ms-flex-align: end;
-        align-items: flex-end; }
+        align-items: flex-end;
+    max-width: 100vw; }
     .slider footer .slider__desc {
       opacity: 0;
       position: absolute; }
@@ -352,14 +372,18 @@ a {
       justify-content: space-between;
   padding: 20px 40px;
   -ms-flex-align: center;
-      align-items: center; }
+      align-items: center;
+  max-width: 100vw; }
   .main-header img {
     height: 60px; }
   .main-header nav a {
     color: #E7CC84;
     text-transform: uppercase;
-    letter-spacing: 8px;
-    font-size: 1.3rem; }
+    letter-spacing: 4px;
+    font-size: 1.3rem;
+    transition: .3s all ease; }
+    .main-header nav a:hover {
+      opacity: .7; }
 
 .project-nav {
   position: absolute;
@@ -414,7 +438,7 @@ a {
   bottom: -12.5px;
   margin: 0 auto;
   transform: rotate(45deg);
-  animation: rotateDiamond 5s qubic infinite forwards; }
+  animation: rotateDiamond 5s ease infinite forwards; }
 
 @keyframes rotateDiamond {
   0% {
@@ -827,3 +851,73 @@ a {
 .section-responsive__phones img {
   margin-right: 42px;
   width: 200px; }
+
+.profile__body {
+  margin-left: 30%;
+  max-width: 500px;
+  position: relative;
+  z-index: 1; }
+  .profile__body p a {
+    color: #fff;
+    border-bottom: 1.3px solid #ead38f33;
+    padding-bottom: 3px;
+    transition: .3s all ease; }
+    .profile__body p a:hover {
+      border-bottom: 1.3px solid #E7CC84; }
+
+.profile p {
+  color: #fff;
+  font-size: 1.3rem;
+  max-width: 350px;
+  line-height: 2.5; }
+
+.profile__title {
+  font-family: "Oswald", sans-serif;
+  color: #E7CC84;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  line-height: 2.2;
+  font-size: 1.4rem; }
+
+.profile__social {
+  margin-top: 20px; }
+  .profile__social a {
+    color: #fff;
+    font-size: 1.8rem;
+    margin-right: 30px;
+    transition: .3s all ease; }
+    .profile__social a:hover {
+      opacity: .6; }
+
+.profile__face {
+  position: absolute;
+  left: 0;
+  height: 110vh;
+  width: initial; }
+
+.profile__body-a,
+.profile__body-b,
+.profile__body-c,
+.profile__body-d,
+.profile__body-e {
+  opacity: 0;
+  transform: translateX(-20px); }
+
+.profile .main-header nav a {
+  position: relative;
+  color: grey; }
+  .profile .main-header nav a:after {
+    width: 1px;
+    height: 80px;
+    position: absolute;
+    background: #E7CC84;
+    transform: rotate(-45deg);
+    display: block;
+    content: '';
+    top: -31px;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    transition: .3s all ease;
+    z-index: 0; }

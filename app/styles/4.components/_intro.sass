@@ -7,10 +7,17 @@
   justify-content: center
   align-items: center
   background: $bg-dark
+
+  &__header
+    position: fixed
+    top: 15px
+    width: 100%
+    opacity: 0
   
   &__logo
     position: relative
     z-index: 2 
+    opacity: 0
 
   &__ghost-face
     position: absolute
@@ -19,6 +26,7 @@
     left: 0
     right: 0
     margin: 0 auto
+    opacity: 0
 
   &__body
     position: relative
@@ -35,6 +43,7 @@
       font-size: 1.4rem
       text-align: center
       width: 500px
+      opacity: 0
 
   &__logo
     position: absolute
@@ -63,13 +72,14 @@
     animation: moveClouds 40s forwards infinite
     z-index: 0
     left: 0
+    opacity: 0
 
   &__link
     position: absolute
     display: flex
     justify-content: center
     bottom: 30px
-
+    opacity: 0
 
     button
       background: none
@@ -170,3 +180,12 @@
   100% 
     transform: translateX(-100%) scaleX(200%)
     left: 0
+
+.intro__header
+  z-index: 10
+
+.intro
+  .intro__body p,
+  .intro__link,
+  .intro__logo
+    transform: translateY(30px)

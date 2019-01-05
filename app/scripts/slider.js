@@ -265,29 +265,29 @@ TweenMax.staggerFrom('.intro__text', 2, {
   blur: 10
 });
 
-TweenMax.from('.intro__ghost-face', 2, {
-  opacity: 0,
-  delay: 1,
-  blur: 10
+TweenMax.to('.intro__ghost-face', 2, {
+  opacity: 1,
+  delay: 1
 });
 
-TweenMax.from('.intro__body p', 1, {
-  opacity: 0,
-  blur: 10,
+TweenMax.to('.intro__body p', 1, {
+  opacity: 1,
   delay: 2,
-  y: 30
+  y: 0
 });
 
-TweenMax.from('.intro__logo', 1, {
-  opacity: 0,
-  blur: 10,
+TweenMax.to('.intro__logo', 1, {
+  opacity: 1,
   delay: 2.5,
-  y: 30
+  y: 0
 });
 
-TweenMax.from('.intro__link', 1, {
-  opacity: 0,
-  blur: 10,
+TweenMax.to('.intro__link, .intro__header', 1, {
+  opacity: 1,
   delay: 3,
-  y: 30
+  y: 0
+});
+
+TweenMax.to('.intro__clouds', 1, {
+  opacity: 1
 });

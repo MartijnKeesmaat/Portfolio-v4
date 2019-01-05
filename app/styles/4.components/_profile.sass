@@ -1,0 +1,76 @@
+.profile
+  &__body
+    margin-left: 30%
+    max-width: 500px
+    position: relative
+    z-index: 1
+
+    p a
+      color: #fff
+      border-bottom: 1.3px solid #ead38f33
+      padding-bottom: 3px
+      transition: .3s all ease
+
+      &:hover
+        border-bottom: 1.3px solid $color-main
+
+  p
+    color: #fff
+    font-size: 1.3rem
+    max-width: 350px
+    line-height: 2.5
+
+  &__title
+    font-family: $oswald
+    color: #E7CC84
+    text-transform: uppercase
+    letter-spacing: 5px
+    line-height: 2.2
+    font-size: 1.4rem
+
+  &__social
+    margin-top: 20px
+
+    a
+      color: #fff
+      font-size: 1.8rem
+      margin-right: 30px
+      transition: .3s all ease
+
+      &:hover
+        opacity: .6
+
+  &__face
+    position: absolute
+    left: 0
+    height: 110vh
+    width: initial
+
+.profile__body-a,
+.profile__body-b,
+.profile__body-c,
+.profile__body-d,
+.profile__body-e
+  opacity: 0
+  transform: translateX(-20px)
+
+.profile
+  .main-header nav a
+    position: relative
+    color: grey
+
+    &:after
+      width: 1px
+      height: 80px
+      position: absolute
+      background: $color-main
+      transform: rotate(-45deg)
+      display: block
+      content: ''
+      top: -31px
+      bottom: 30px
+      left: 0
+      right: 0
+      margin: 0 auto
+      transition: .3s all ease
+      z-index: 0

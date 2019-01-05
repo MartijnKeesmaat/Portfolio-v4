@@ -19,6 +19,11 @@
   <div id="fade"></div>
 
   <section class="intro">
+    <header class="main-header intro__header">
+      <!-- <a href="index.html"> <img src="img/logo.svg" alt=""> </a> -->
+      <div></div>
+      <nav><a href="profile.html">Profile</a></nav>
+    </header>
     <div class="intro__clouds"></div>
     <p class="intro__text intro__text--top-left">crea <span>ti</span></p>
     <p class="intro__text intro__text--bottom-left">ve</p>
@@ -26,7 +31,10 @@
     <p class="intro__text intro__text--bottom-right">po <span>r</span></p>
     <main class="intro__body">
       <img class="intro__logo" src="img/logo--large.svg" alt="">
-      <p>Studying media-design, Part-time front-ender aspiring creative developer</p>
+      <p>
+        Studying media-design,
+        Part-time front-ender
+        aspiring creative developer</p>
     </main>
     <img class="intro__ghost-face" src="img/ghost-face.png" alt="">
     <div class="intro__gradient"></div>
@@ -36,42 +44,44 @@
   </section>
 
   <section class="slider">
-    <header class="slider__header main-header">
-      <a href="index.html"> <img class="slider-ui" src="img/logo.svg" alt=""> </a>
-      <nav class="slider-ui"><a class="slider-ui" href="#">Profile</a></nav>
+    <header class="main-header slider__header">
+      <a href="index.html"> <img src="img/logo.svg" alt=""> </a>
+      <nav><a href="profile.html">Profile</a></nav>
     </header>
     <main class="slider__body">
-      <h1 class="slider-display-title">Greenegg</h1>
-      <p class="slider__title">Codename</p>
-      <p class="slider__title">GreenEgg</p>
-      <p class="slider__title">Snippets</p>
-      <svg style="clip-path: url(#theSVGPath);">
-        <image class="slider__img" xlink:href="img/codename/header.jpg" x="-400" y="-250" />
-        <image class="slider__img" xlink:href="img/greenegg/header.jpg" x="-250" y="-250" />
-        <image class="slider__img" xlink:href="img/snippets/header.jpg" x="-250" y="-250" />
-        <defs>
-          <clipPath id="theSVGPath">
-            <path d="
+      <div class="slider__body__scale">
+        <h1 class="slider-display-title">Greenegg</h1>
+        <p class="slider__title">Codename</p>
+        <p class="slider__title">GreenEgg</p>
+        <p class="slider__title">Snippets</p>
+        <svg style="clip-path: url(#theSVGPath);">
+          <image class="slider__img" xlink:href="img/codename/header.jpg" x="-400" y="-250" />
+          <image class="slider__img" xlink:href="img/greenegg/header.jpg" x="-250" y="-250" />
+          <image class="slider__img" xlink:href="img/snippets/header.jpg" x="-250" y="-250" />
+          <defs>
+            <clipPath id="theSVGPath">
+              <path d="
               M-3.69482223e-13,96.4974747 L49.4974747,47 
               L383.251875,380.754401 
               L333.754401,430.251875 
               L-3.69482223e-13,96.4974747 
               Z" />
-            <path d="M103,73.4974747 
+              <path d="M103,73.4974747 
               L152.497475,24 
               L486.251875,357.754401 
               L436.754401,407.251875 
               L103,73.4974747 
               Z" />
-            <path d=" M206,49.4974747 
+              <path d=" M206,49.4974747 
               L255.497475,6.39488462e-14 
               L589.251875,333.754401 
               L539.754401,383.251875 
               L206,49.4974747 
               Z" />
-          </clipPath>
-        </defs>
-      </svg>
+            </clipPath>
+          </defs>
+        </svg>
+      </div>
     </main>
     <aside class="project-nav slider-ui">
       <button data-index="0" class="project-nav__item project-nav__item--active"></button>
