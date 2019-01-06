@@ -297,7 +297,7 @@ a {
   width: 300vw;
   height: 300vh;
   background: linear-gradient(to right, #2F303A, #1B1C22);
-  z-index: 9;
+  z-index: 99999999;
   left: -50%;
   right: 0;
   transform: translateY(100%) rotate(-10deg); }
@@ -540,8 +540,7 @@ a {
 
 .pd-description {
   background: #B1A070;
-  height: 90vh;
-  padding: 80px;
+  padding: 120px 30px;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: center;

@@ -198,8 +198,7 @@
           It was of importance that the site is respsonsive on mobile, tablet,
           laptop and desktop. The site was tested on multipe devices and
           browsers. Things got a little bit tricky when we started testing in
-          IE. But eventually it worked in all the browsers we wanted to
-          support.
+          IE. But eventually it worked every supported browser.
         </p>
       </div>
     </div>
@@ -272,6 +271,19 @@
       displaceScale: [200, 70]
     });
   </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-61268275-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-61268275-2');
+  </script>
+
 </body>
 
 </html>
