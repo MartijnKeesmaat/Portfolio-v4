@@ -3,8 +3,20 @@
   padding: 120px 10vw 100px
   padding-right: 0
 
+  &__desc
+    max-width: 260px
+    color: rgba(#000, .8)
+    font-size: 1.6rem
+
+    a
+      border-bottom: 1.3px solid #a2252533
+      padding-bottom: 3px
+      transition: .3s all ease
+      
+      &:hover
+        border-bottom: 1.3px solid #E7CC84
+
   &__inner
-    
 
   h2
     opacity: .6
@@ -23,10 +35,10 @@
     animation: animate-slider 30s infinite linear forwards
 
     &:hover
-      -webkit-animation-play-state: paused;
-      -moz-animation-play-state: paused;
-      -o-animation-play-state: paused;
-      animation-play-state: paused;
+      -webkit-animation-play-state: paused
+      -moz-animation-play-state: paused
+      -o-animation-play-state: paused
+      animation-play-state: paused
 
 
 .pd-slide
@@ -39,6 +51,7 @@
   img
     width: auto
     height: 100%
+    object-fit: cover
 
   &--active
     h2

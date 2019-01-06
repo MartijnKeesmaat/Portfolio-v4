@@ -5,6 +5,7 @@
   &__inner
     max-width: 1000px
     margin: 0 auto
+    padding: 0 40px
 
   &__heading
     max-width: 700px
@@ -71,3 +72,20 @@
         z-index: 2
         top: -40px
         box-shadow: 1px 4px 9px rgba(0,0,0,.09), 0 4px 17px rgba(0,0,0,.1)
+
+  @media(max-width: 570px)
+    padding: 90px 40px 0
+
+    &__heading
+      flex-direction: column
+
+      h2
+        text-align: left
+        line-height: 1.6
+        max-width: 310px
+    
+    &__heading__r
+      margin-left: 0
+
+    &__images
+      margin-bottom: -100px

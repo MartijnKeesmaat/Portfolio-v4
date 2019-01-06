@@ -17,7 +17,7 @@ TweenMax.to('.profile__body-c', 0.8, {
 });
 
 TweenMax.to('.profile__body-d', 0.8, {
-  opacity: 1,
+  opacity: .6,
   x: 0
 });
 

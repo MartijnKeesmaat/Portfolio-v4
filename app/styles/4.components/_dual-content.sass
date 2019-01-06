@@ -60,6 +60,16 @@
       height: 30px
 
 
+  @media(max-width: 1050px)
+    &__inner
+      flex-direction: column
+
+    &__text
+      width: 100%
+      margin-top: 55px
+      max-width: initial
+      margin-left: initial
+
 @keyframes scrollProject
   0%
     transform: translateY(0%)
@@ -86,3 +96,18 @@
       margin-right: 42px
       width: 200px
 
+  @media(max-width: 1300px)
+
+    img
+      width: 130px
+
+  @media(max-width: 800px)
+    flex-direction: column
+    padding: 50px 40px 90px
+    align-items: flex-start
+
+    .dual-content__inner
+      margin-right: 0
+    
+    .section-responsive__phones
+      margin-top: 40px
