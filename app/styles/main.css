@@ -14,11 +14,11 @@ body {
   margin: 0; }
 
 ::-moz-selection {
-  background: #2F303A;
+  background: #E7CC84;
   color: #fff; }
 
 ::selection {
-  background: #2F303A;
+  background: #E7CC84;
   color: #fff; }
 
 ::-webkit-scrollbar {
@@ -26,7 +26,7 @@ body {
   background: #1B1C22; }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #828282; }
+  background-color: #E7CC84; }
 
 img {
   max-width: 100%;
@@ -790,13 +790,13 @@ a {
     text-align: center;
     text-transform: capitalize;
     margin-right: 20px;
-    white-space: pre-wrap; }
+    white-space: initial; }
   .pd-slide__desc {
     font-family: "Oswald", sans-serif;
     text-transform: uppercase;
     letter-spacing: 5px;
     font-size: 1.3rem;
-    white-space: pre-wrap;
+    white-space: initial;
     max-width: 380px;
     line-height: 2; }
   .pd-slide__numb {
